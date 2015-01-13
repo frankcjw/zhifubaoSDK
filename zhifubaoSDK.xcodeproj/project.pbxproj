@@ -19,6 +19,8 @@
 		B64EE5B71A65282300D308C6 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5B31A65282300D308C6 /* AlipaySDK.framework */; };
 		B64EE5B81A65282300D308C6 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5B41A65282300D308C6 /* libcrypto.a */; };
 		B64EE5B91A65282300D308C6 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5B51A65282300D308C6 /* libssl.a */; };
+		B64EE5BB1A65295D00D308C6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5BA1A65295D00D308C6 /* CFNetwork.framework */; };
+		B64EE5BD1A6529CE00D308C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5BC1A6529CE00D308C6 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		B64EE5B31A65282300D308C6 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		B64EE5B41A65282300D308C6 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		B64EE5B51A65282300D308C6 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		B64EE5BA1A65295D00D308C6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B64EE5BC1A6529CE00D308C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64EE5BD1A6529CE00D308C6 /* SystemConfiguration.framework in Frameworks */,
+				B64EE5BB1A65295D00D308C6 /* CFNetwork.framework in Frameworks */,
 				B64EE5B81A65282300D308C6 /* libcrypto.a in Frameworks */,
 				B64EE5B71A65282300D308C6 /* AlipaySDK.framework in Frameworks */,
 				B64EE5B91A65282300D308C6 /* libssl.a in Frameworks */,
@@ -76,6 +82,8 @@
 		B64EE56A1A651F6A00D308C6 = {
 			isa = PBXGroup;
 			children = (
+				B64EE5BC1A6529CE00D308C6 /* SystemConfiguration.framework */,
+				B64EE5BA1A65295D00D308C6 /* CFNetwork.framework */,
 				B64EE5751A651F6A00D308C6 /* zhifubaoSDK */,
 				B64EE5921A651F6B00D308C6 /* zhifubaoSDKTests */,
 				B64EE5741A651F6A00D308C6 /* Products */,
@@ -372,6 +380,7 @@
 		B64EE59A1A651F6B00D308C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +392,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/zhifubaoSDK/SDK",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -390,6 +400,7 @@
 		B64EE59B1A651F6B00D308C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -401,6 +412,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/zhifubaoSDK/SDK",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
