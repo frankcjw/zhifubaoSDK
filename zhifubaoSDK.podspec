@@ -98,7 +98,10 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
 
   
-
+  s.subspec 'zfb' do |ss|
+    ss.source_files = 'zhifubaoSDK/SDK/*'
+    ss.requires_arc = true
+  end
 
   # s.public_header_files = "Classes/**/*.h"
 
