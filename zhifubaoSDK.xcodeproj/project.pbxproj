@@ -15,6 +15,10 @@
 		B64EE5871A651F6B00D308C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64EE5861A651F6B00D308C6 /* Images.xcassets */; };
 		B64EE58A1A651F6B00D308C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64EE5881A651F6B00D308C6 /* LaunchScreen.xib */; };
 		B64EE5961A651F6B00D308C6 /* zhifubaoSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B64EE5951A651F6B00D308C6 /* zhifubaoSDKTests.m */; };
+		B64EE5B61A65282300D308C6 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B64EE5B21A65282300D308C6 /* AlipaySDK.bundle */; };
+		B64EE5B71A65282300D308C6 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5B31A65282300D308C6 /* AlipaySDK.framework */; };
+		B64EE5B81A65282300D308C6 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5B41A65282300D308C6 /* libcrypto.a */; };
+		B64EE5B91A65282300D308C6 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64EE5B51A65282300D308C6 /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		B64EE58F1A651F6B00D308C6 /* zhifubaoSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zhifubaoSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64EE5941A651F6B00D308C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64EE5951A651F6B00D308C6 /* zhifubaoSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zhifubaoSDKTests.m; sourceTree = "<group>"; };
+		B64EE5B21A65282300D308C6 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		B64EE5B31A65282300D308C6 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		B64EE5B41A65282300D308C6 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		B64EE5B51A65282300D308C6 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64EE5B81A65282300D308C6 /* libcrypto.a in Frameworks */,
+				B64EE5B71A65282300D308C6 /* AlipaySDK.framework in Frameworks */,
+				B64EE5B91A65282300D308C6 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,7 @@
 		B64EE5751A651F6A00D308C6 /* zhifubaoSDK */ = {
 			isa = PBXGroup;
 			children = (
+				B64EE5B11A65282300D308C6 /* SDK */,
 				B64EE57A1A651F6B00D308C6 /* AppDelegate.h */,
 				B64EE57B1A651F6B00D308C6 /* AppDelegate.m */,
 				B64EE5801A651F6B00D308C6 /* ViewController.h */,
@@ -120,6 +132,17 @@
 				B64EE5941A651F6B00D308C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B64EE5B11A65282300D308C6 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				B64EE5B21A65282300D308C6 /* AlipaySDK.bundle */,
+				B64EE5B31A65282300D308C6 /* AlipaySDK.framework */,
+				B64EE5B41A65282300D308C6 /* libcrypto.a */,
+				B64EE5B51A65282300D308C6 /* libssl.a */,
+			);
+			path = SDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +227,7 @@
 			files = (
 				B64EE5851A651F6B00D308C6 /* Main.storyboard in Resources */,
 				B64EE58A1A651F6B00D308C6 /* LaunchScreen.xib in Resources */,
+				B64EE5B61A65282300D308C6 /* AlipaySDK.bundle in Resources */,
 				B64EE5871A651F6B00D308C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,8 +373,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zhifubaoSDK/SDK",
+				);
 				INFOPLIST_FILE = zhifubaoSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zhifubaoSDK/SDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -359,8 +391,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zhifubaoSDK/SDK",
+				);
 				INFOPLIST_FILE = zhifubaoSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zhifubaoSDK/SDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -418,6 +458,7 @@
 				B64EE59B1A651F6B00D308C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B64EE59C1A651F6B00D308C6 /* Build configuration list for PBXNativeTarget "zhifubaoSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +467,7 @@
 				B64EE59E1A651F6B00D308C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
