@@ -89,7 +89,10 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "CJWUtils/utils/*.{h,m}"
-  s.source_files  = "Classes", "zhifubaoSDK/SDK/**/*"
+  s.source_files  = "Classes", "zhifubaoSDK/SDK/AlipaySDK.framework"
+  s.source_files  = "Classes", "zhifubaoSDK/SDK/AlipaySDK.bundle"
+  s.source_files  = "Classes", "zhifubaoSDK/SDK/libcrypto.a"
+  s.source_files  = "Classes", "zhifubaoSDK/SDK/libssl.a"
   s.exclude_files = "Classes/Exclude"
 
   
